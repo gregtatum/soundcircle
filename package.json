@@ -1,0 +1,27 @@
+{
+  "name": "soundcircle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify ./src/index.js -d -g [uglifyify -x .js] | exorcist assets/build/bundle.js.map > assets/build/bundle.js",
+    "start": "budo src/index.js:assets/build/bundle.js --live --verbose | garnish"
+  },
+  "author": "",
+  "license": "MIT",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "^11.0.1",
+    "budo": "^4.2.1",
+    "dat-gui": "^0.5.0",
+    "exorcist": "^0.4.0",
+    "lodash": "^3.10.1",
+    "octavian": "^2.1.0",
+    "uglifyify": "^3.0.1"
+  }
+}
